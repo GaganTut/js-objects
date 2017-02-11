@@ -74,7 +74,15 @@ console.log(plainBox);
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
 */
+var stockCar = {
+  model: "Ford",
+  year: 2015,
+  automaticTransmission: true,
+  driver: null,
+  passengers: []
+};
 
+console.log(stockCar);
 
 /*
    Add new property inside a function
@@ -91,7 +99,17 @@ console.log(plainBox);
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
+var plainPerson = {};
 
+function buildPerson(person, nameString, age){
+  person.nameString = nameString;
+  person.age = age;
+  return person;
+}
+completePerson = buildPerson(plainPerson, "Joe", 45);
+console.log(completePerson);
+console.log(completePerson.nameString);
+console.log(completePerson.age);
 
 /*
    Display values of objects that are inside an array
@@ -117,8 +135,68 @@ console.log(plainBox);
             =====
             ...
  */
+var arrayOfObjects = [
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
 
-
+function printProcessedOrders(order){
+  for (var i = 0; i < order.length; i++){
+    console.log("=====");
+    console.log("ID: " + order[i].id);
+    console.log("Purchase Date: " + order[i].date);
+    console.log("Purchase Total: " + order[i].total);
+  }
+}
+printProcessedOrders(arrayOfObjects);
 /*
    Addition with an object
    Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. 
