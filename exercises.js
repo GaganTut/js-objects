@@ -209,8 +209,17 @@ printProcessedOrders(arrayOfObjects);
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
+var sumObj = {
+  a: 5,
+  b: 7,
+  result: undefined
+};
 
-
+function objectAddition(thisObject){
+  thisObject.result = thisObject.a + thisObject.b;
+}
+objectAddition(sumObj);
+console.log(sumObj.result);
 /*
    Print sum function and add as new key-value
    Declare a new function named printObj and a single parameter which will be the object from the challenge just above. 
@@ -227,7 +236,9 @@ printProcessedOrders(arrayOfObjects);
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
-
+function printObj(aboveObject){
+  
+}
 
 /*
    Putting stuff in `plainBox`
