@@ -237,8 +237,11 @@ console.log(sumObj.result);
         **create more** objects and invoke your function multiple times.
  */
 function printObj(aboveObject){
-  
+  aboveObject.output = "";
+  aboveObject.output = aboveObject.a + " + " +  aboveObject.b + " = " + aboveObject.result;
 }
+printObj(sumObj);
+console.log(sumObj);
 
 /*
    Putting stuff in `plainBox`
@@ -249,8 +252,16 @@ function printObj(aboveObject){
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named 
         plainBoxResult and use `console.log` to inspect your results.
  */
-
-
+function putInPlainBox(anObject){
+  anObject.contents = [];
+  for (var i = 0; i < 10; i++){
+    var randomNum = Math.floor(Math.random() * 10);
+    console.log(randomNum);
+    anObject.contents[i] = (randomNum);
+  }
+}
+putInPlainBox(plainBox);
+console.log(plainBox);
 /*
    Detecting transmission
         Declare a function named detectingTransmission and a single parameter which will be an object. Within this function 
@@ -261,7 +272,14 @@ function printObj(aboveObject){
 
         Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
-
+function detectingTransmission(anotherObject){
+  if (anotherObject.automaticTransmission === true){
+    console.log("You have an automatic transmission!");
+  } else {
+    console.log("You have manual transmission");
+  }
+}
+detectingTransmission(stockCar);
 
 /*
    Who's driving this thing?!
@@ -274,8 +292,11 @@ function printObj(aboveObject){
         Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect 
         your results. Consider using `plainPerson` as your driver.
  */
-
-
+function addDriver(carObject, carPerson){
+  carObject.driver = carPerson;
+}
+addDriver(stockCar, "Gagan");
+console.log(stockCar.driver);
 /*
     #Final Boss
     The Dev League instructors want to ride your whip!
@@ -308,3 +329,25 @@ function printObj(aboveObject){
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+
+function addPassengers(carParam, namesList, agesList){
+  var passengersObject = {};
+  buildPerson(passengersObject, namesList, agesList);
+  carParam.passengers = passengersObject;
+}
+
+addPassengers(stockCar, passengerList, passengerAges);
+console.log(stockCar);
+
+function displayPassengers(carP){
+  for (var i = 0; i < carP.passengers.nameString.length; i++){
+    console.log(carP.passengers.nameString[i] + ", who is " + carP.passengers.age[i] + " years old, is always asking for a ride.");
+  }
+}
+
+displayPassengers(stockCar);
+
+
